@@ -100,6 +100,30 @@
     'prefix': 'dynamicSL'
     'body': 'var ${1:dynamicServiceLayer} = new ArcGISDynamicMapServiceLayer("", {\n\tid: "${2:DynamicMapService}",\n\tshowAttribution: ${3:true},\n\topacity: ${4:0.5},\n\tvisible: ${5:true}\n});\n${6:}'
 
+  'featureLayer':
+    'prefix': 'featureLayer'
+    'body': 'var ${1:featureLayer} = new FeatureLayer("",{\n\tmode: ${2:FeatureLayer.MODE_AUTO},\n\tinfoTemplate: ${3:template},\n\tshowAttribution: ${4:true},\n\toutFields: [${5:"*"}]\n});\n${6:}'
+
+  'ImageServiceLayer':
+    'prefix': 'imageSL'
+    'body': 'var ${1:imageServiceLayer} = new ArcGISImageServiceLayer("", {\n\timageServiceParameters: ${2:params},\n\topacity: ${3:0.75}\n});\n${4:}'
+
+  'Layer Info':
+    'prefix': 'layerInfo'
+    'body': 'var ${1:layerInfo} = new WMTSLayerInfo({\n\tidentifier: ${2:"opengeo:countries"},\n\ttileMatrixSet: "${3:EPSG:4326}",\n\tformat: "${4:png}"\n});\n'
+
+  'TiledServiceLayer':
+    'prefix': 'tiledSL'
+    'body': 'var ${1:tiledServiceLayer} = new ArcGISTiledMapServiceLayer("", {\n\tdisplayLevels:${2:[0,1,2,3,4,5,6,7]}\n});\n${3:}'
+
+  'wmsLayer':
+    'prefix': 'wmsLayer'
+    'body': 'var ${1:wmsLayer} = new WMSLayer("", {\n\tformat: "${2:png}",\n\tvisibleLayers: ${3:[0]}\n});'
+
+  'wmtsLayer':
+    'prefix': 'wmtsLayer'
+    'body': 'var ${1:wmtsLayer} = new WMTSLayer("", ${2:options});'
+
   # esri/toolbars
   'Draw Toolbar':
     'prefix': 'drawToolbar'
