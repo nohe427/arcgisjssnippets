@@ -94,6 +94,12 @@
     'prefix': 'polyline'
     'body': 'var ${1:polylineJson} = {\n\t"paths":[[[-122.68,45.53], [-122.58,45.55],\n\t[-122.57,45.58],[-122.53,45.6]]],\n\t"spatialReference":{"wkid":4326}\n};\n\nvar ${2:polyline} = new Polyline(${1:polylineJson});\n${3:}'
 
+  # esri/layers
+
+  'dynamicServiceLayer':
+    'prefix': 'dynamicSL'
+    'body': 'var ${1:dynamicServiceLayer} = new ArcGISDynamicMapServiceLayer("", {\n\tid: "${2:DynamicMapService}",\n\tshowAttribution: ${3:true},\n\topacity: ${4:0.5},\n\tvisible: ${5:true}\n});\n${6:}'
+
   # esri/toolbars
   'Draw Toolbar':
     'prefix': 'drawToolbar'
