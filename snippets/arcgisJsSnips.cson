@@ -1,0 +1,104 @@
+'.source.js':
+
+  #Required to run
+  'Require':
+    'prefix': 'require'
+    'body': 'require([\n${1:}\n],function(${2:}){\n${3:}\n});'
+
+  # esri
+  'New Map':
+    'prefix': 'map'
+    'body': '${1:map} = new Map("${2:MapDiv}", {\n\tbasemap: "${3:topo}", \n\tcenter: [${5:-122.45}, ${6:37.75}], // longitude, latitude \n\t zoom: ${4:13}\n\t}\n ${7:}'
+
+  # esri/dijit
+
+  'Attribution':
+    'prefix': 'attribution'
+    'body': 'var ${1:attribution} = new Attribution({\n\tmap: ${2:map}\n}, "${3:attributionDiv}");\n${4:}'
+
+  'Basemap':
+    'prefix': 'basemap'
+    'body': 'var ${1:waterBasemap} = new Basemap({\n\tlayers: [${2:waterTemplateLayer}],\n\ttitle: "${3:Water Template}",\n\tthumbnailUrl:"${4:images/waterThumb.png}"\n});\n${5:}'
+
+  'Basemap Gallery':
+    'prefix': 'basemapGallery'
+    'body': 'var ${1:basemapGallery} = new BasemapGallery({\n\tshowArcGISBasemaps: ${2:true},\n\tmap: ${3:map}\n\t}, "${4:basemapGalleryDiv}");\n${5:}'
+
+  'Basemap Layer':
+    'prefix': 'basemapLayer'
+    'body': 'var ${1:publicSafetyLayer} = new BasemapLayer({\n\turl:"${2:http://sampleserver1.arcgisonline.com/ArcGIS/rest/services/PublicSafety/PublicSafetyBasemap/MapServer}"\n\t});\n${3:}'
+
+  'Basemap Toggle':
+    'prefix': 'basemapToggle'
+    'body': 'var ${1:basemapToggle} = new BasemapToggle({\n\ttheme: "${2:basemapToggle}",\n\tmap: ${3:map},\n\tvisible: ${4:true},\n\tbasemap: "${5:hybrid}"\n\t}, "${6:<dom_id>}");\n\t${1:basemapToggle}.startup();\n${7:}'
+
+  'Bookmark Item':
+    'prefix': 'bookmarkItem'
+    'body': 'var ${1:bookmarks} = [{\n\t"extent": {\n\t\t"spatialReference": {\n\t\t\t"wkid": 102100\n\t},\n\t"xmax": -10983636.8866296,\n\t"xmin": -14411372.5423473,\n\t"ymax": 5109691.46502651,\n\t"ymin": 2707598.58754309\n\t},\n"name": "Sonara"\n}];\n${2:}'
+
+  'Bookmarks':
+    'prefix': 'bookmarks'
+    'body': 'var ${1:bookmarks} = new Bookmarks({\n\tmap: ${2:map},\n\tbookmarks: ${3:bookmarksArray}\n\t}, dom.byId("${4:bookmarks}"));\n${5:}'
+
+  'Gallery':
+    'prefix': 'gallery'
+    'body': 'var ${2:params} = {};\n${2:params}.items = itemsArray;\n${2:params}.thumbnailStyle = "${3:small}";\n\n${1:gallery} = new Gallery(${2:params}, "${4:galleryDiv}");\n${5:}'
+
+  'Home Button':
+    'prefix': 'homeb'
+    'body': 'var ${1:home} = new HomeButton({\n\tmap: map\n\t}, "HomeButton");\n\t${1:home}.startup();\n${2:}'
+
+  'LayerSwipe':
+    'prefix': 'layerswipe'
+    'body': 'var ${1:layerSwipe} = new LayerSwipe({\n\ttype: "${3:horizontal}",\n\ttop: ${4:250},\n\tmap: ${5:map},\n\tlayers: [ ${6:layer} ]\n\t}, "${2:widget}");\n\t${1:layerSwipe}.startup();\n${7:}'
+
+  'Legend':
+    'prefix': 'legend'
+    'body': 'var ${1:legend} = new Legend({\n\tmap: ${2:map}\n\tautoUpdate: true\n}, "${3:legendDiv}");\n${1:legend}.startup();\n${4:}'
+
+  'Overview Map':
+    'prefix': 'overview'
+    'body': 'var ${1:overviewMapDijit} = new OverviewMap({\n\tmap: ${2:map},\n\tvisible: true\n\t});\n\t${1:overviewMapDijit}.startup();\n ${3:}'
+
+  'Print Dijit':
+    'prefix': 'printer'
+    'body': 'var ${1:printer} = new Print({\n\tmap: ${2:map},\n\turl: "${3:http://sampleserver6.arcgisonline.com/arcgis/rest/services/Utilities/PrintingTools/GPServer/Export%20Web%20Map%20Task}"\n}, dom.byId("${4:printButton}"));\n${5:}'
+
+  'Scalebar':
+    'prefix': 'scalebar'
+    'body': 'var ${1:scalebar} = new Scalebar({\n\tmap: ${2:map},\n\tattachTo: "${3:top-right}",  //Valid options are "top-right","bottom-right","top-center","bottom-center","bottom-left","top-left". The default value is "bottom-left".\n\tscalebarStyle: "${4:ruler}", //Line may be used as well.\n\tscalebarUnit: "${5:english}" //Metric or dual may be used.\n\t});\n${6:}'
+
+  # esri/geometry
+
+  'Circle':
+    'prefix': 'circle'
+    'body': 'var ${1:circleGeometry} = new Circle([${2:-117.15}, ${3:32.71}],{\n\t"radius": ${4:2000}\n});\n${5:}'
+
+  'Extent':
+    'prefix': 'extent'
+    'body': 'var ${1:extent} = new esri.geometry.Extent({\n\t"xmin":-122.68,"ymin":45.53,"xmax":-122.45,"ymax":45.6,\n\t"spatialReference":{"wkid":4326}\n});\n${2:}'
+
+  'MultiPoint':
+    'prefix': 'mulitpoint'
+    'body': 'var ${1:mpJson} ={"points":[[-122.63,45.51],[-122.56,45.51],[-122.56,45.55]],"spatialReference":({" wkid":4326 })};\nvar ${2:multipoint} = new Multipoint(${1:mpJson});\n${3:}'
+
+  'Point':
+    'prefix': 'point'
+    'body': 'var ${1:point} = new Point( {"x": -122.65, "y": 45.53, "spatialReference": {"wkid": 4326 } });\n${2:}'
+
+  'Polygon':
+    'prefix': 'polygon'
+    'body': 'var ${1:polygonJson}  = {"rings":[[[-122.63,45.52],[-122.57,45.53],[-122.52,45.50],[-122.49,45.48],\n\t[-122.64,45.49],[-122.63,45.52],[-122.63,45.52]]],"spatialReference":{"wkid":4326 }};\nvar ${2:polygon} = new Polygon(${1:polygonJson});\n${3:}'
+
+  'Polyline':
+    'prefix': 'polyline'
+    'body': 'var ${1:polylineJson} = {\n\t"paths":[[[-122.68,45.53], [-122.58,45.55],\n\t[-122.57,45.58],[-122.53,45.6]]],\n\t"spatialReference":{"wkid":4326}\n};\n\nvar ${2:polyline} = new Polyline(${1:polylineJson});\n${3:}'
+
+  # esri/toolbars
+  'Draw Toolbar':
+    'prefix': 'drawToolbar'
+    'body': 'var ${1:toolbar} = new Draw(${2:map}, {\n\ttooltipOffset: ${3:20},\n\tdrawTime: ${4:90},\n\tshowTooltips: ${5:true},\n\ttolerance: ${6:8}\n\t});\n${7:}'
+
+  'Navigation Toolbar':
+    'prefix': 'navToolbar'
+    'body': 'var ${1:navToolbar} = new Navigation(${2:map});\n${3:}'
