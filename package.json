@@ -1,7 +1,7 @@
 {
   "name": "arcgisjssnippets",
   "main": "./lib/arcgisjssnippets",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "description": "ArcGIS Javascript API Snippets",
   "activationCommands": {
     "atom-workspace": "arcgisjssnippets:toggle"
@@ -11,6 +11,5 @@
   "engines": {
     "atom": ">0.50.0"
   },
-  "dependencies": {
-  }
+  "dependencies": {}
 }
