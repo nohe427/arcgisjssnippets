@@ -6,7 +6,7 @@
   "activationCommands": {
     "atom-workspace": "arcgisjssnippets:toggle"
   },
-  "repository": "https://github.com/atom/arcgisjssnippets",
+  "repository": "https://github.com/nohe427/arcgisjssnippets",
   "license": "MIT",
   "engines": {
     "atom": ">0.50.0"
