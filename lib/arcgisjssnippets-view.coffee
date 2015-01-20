@@ -7,7 +7,7 @@ class ArcgisjssnippetsView
 
     # Create message element
     message = document.createElement('div')
-    message.textContent = "The Arcgisjssnippets package is Alive! It's ALIVE!"
+    message.textContent = "This does not do anything yet.  We will remove/update this soon."
     message.classList.add('message')
     @element.appendChild(message)
 
